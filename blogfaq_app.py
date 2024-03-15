@@ -63,14 +63,6 @@ def main():
     
     # Title and description
     st.title("✍️ Alwrity - AI Blog FAQ Generator")
-    data_oracle = import_json(r"lottie_files/brain_robot.json")
-    st_lottie(data_oracle, height=400, key="oracle")
-    st.markdown('''
-                Generate SEO optimized Blog FAQs - powered by AI (OpenAI GPT-3, Gemini Pro).
-                Implemented by [Alwrity](https://alwrity.netlify.app).
-                Alwrity will do web research for given keywords OR Blog content.
-                It will process 'People Also Ask' questions and generate 5 Frequently Asked Questions(FAQ).
-                ''')
 
     # Input section
     with st.expander("**PRO-TIP** - Read the instructions below.", expanded=True):
@@ -81,21 +73,30 @@ def main():
         with col2:
             input_title_intent = st.selectbox('Search Intent', ('Informational Intent', 'Commercial Intent', 'Transactional Intent', 'Navigational Intent'), index=0)
 
-    # Generate Blog Title button
-    if st.button('**Generate Blog FAQs**'):
-        with st.spinner():
-            # Clicking without providing data, really ?
-            if not input_blog_keywords:
-                st.error('** 🫣Provide Inputs to generate Blog Tescription. Blog Keywords, is required!**')
-            elif input_blog_keywords:
-                blog_faqs = generate_blog_faqs(input_blog_keywords, input_title_type, input_title_intent)
-                if blog_faqs:
-                    st.subheader('**👩‍🔬👩‍🔬Go Rule search ranking with these Blog FAQs!**')
-                    with st.expander("** Final - Blog FAQs Output 🎆🎇 🎇 **", expanded=True):
+        # Generate Blog FAQ button
+        if st.button('**Generate Blog FAQs**'):
+            with st.spinner():
+                # Clicking without providing data, really ?
+                if not input_blog_keywords:
+                    st.error('** 🫣Provide Inputs to generate Blog Tescription. Blog Keywords, is required!**')
+                elif input_blog_keywords:
+                    blog_faqs = generate_blog_faqs(input_blog_keywords, input_title_type, input_title_intent)
+                    if blog_faqs:
+                        st.subheader('**👩‍🔬👩‍🔬Go Rule search ranking with these Blog FAQs!**')
                         st.code(blog_faqs)
-                    st.balloons()
-                else:
-                    st.error("💥**Failed to generate blog FAQs. Please try again!**")
+                        st.balloons()
+                    else:
+                        st.error("💥**Failed to generate blog FAQs. Please try again!**")
+
+    data_oracle = import_json(r"lottie_files/brain_robot.json")
+    st_lottie(data_oracle, key="oracle")
+    st.markdown('''
+                Generate SEO optimized Blog FAQs - powered by AI (OpenAI GPT-3, Gemini Pro).
+                Implemented by [Alwrity](https://alwrity.netlify.app).
+                Alwrity will do web research for given keywords OR Blog content.
+                It will process 'People Also Ask' questions and generate 5 Frequently Asked Questions(FAQ).
+                ''')
+
 
 
 # Function to generate blog metadesc
