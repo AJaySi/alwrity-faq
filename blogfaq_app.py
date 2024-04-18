@@ -15,17 +15,6 @@ def main():
     st.set_page_config(
         page_title="Alwrity - AI Writer",
     )
-    # Remove the extra spaces from margin top.
-    st.markdown("""
-        <style>
-               .block-container {
-                    padding-top: 0rem;
-                    padding-bottom: 0rem;
-                    padding-left: 1rem;
-                    padding-right: 1rem;
-                }
-        </style>
-        """, unsafe_allow_html=True)
     st.markdown(f"""
       <style>
       [class="st-emotion-cache-7ym5gk ef3psqc12"]{{
@@ -43,15 +32,6 @@ def main():
       </style>
     """
     , unsafe_allow_html=True)
-
-    # Hide top header line
-    hide_decoration_bar_style = '<style>header {visibility: hidden;}</style>'
-    st.markdown(hide_decoration_bar_style, unsafe_allow_html=True)
-
-    # Hide footer
-    hide_streamlit_footer = '<style>#MainMenu {visibility: hidden;} footer {visibility: hidden;}</style>'
-    st.markdown(hide_streamlit_footer, unsafe_allow_html=True)
-
     # Title and description
     st.title("✍️ Alwrity - AI Blog FAQ Generator")
 
