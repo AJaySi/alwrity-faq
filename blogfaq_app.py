@@ -183,7 +183,7 @@ def generate_text_with_exception_handling(prompt):
             },
         ]
 
-        model = genai.GenerativeModel(model_name="gemini-1.5-pro-latest",
+        model = genai.GenerativeModel(model_name="gemini-1.5-flash-latest",
                                       generation_config=generation_config,
                                       safety_settings=safety_settings)
 
