@@ -54,7 +54,7 @@ def main():
                     blog_faqs = generate_blog_faqs(input_blog_keywords, input_title_type, input_title_intent)
                     if blog_faqs:
                         st.subheader('**👩🔬🧕Go Rule search ranking with these Blog FAQs!**')
-                        st.code(blog_faqs)
+                        st.markdown(blog_faqs)
                     else:
                         st.error("💥**Failed to generate blog FAQs. Please try again!**")
 
