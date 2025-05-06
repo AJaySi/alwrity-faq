@@ -27,7 +27,7 @@ Alwrity is a Streamlit application that leverages the power of Google's Generati
 1. **Clone or Download the Repository**
    - Click the green "Code" button above and choose "Download ZIP" or use:
      ```sh
-     git clone https://github.com/AJaySi/AI-Writer.git
+     git clone https://github.com/AJaySi/alwrity-faq.git
      ```
 2. **Install Python Requirements**
    - Open a terminal in the project folder and run:
