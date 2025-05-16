@@ -1,2 +1,5 @@
 streamlit
-google.generativeai
+requests
+tenacity
+google-generativeai
+beautifulsoup4
